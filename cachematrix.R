@@ -27,17 +27,17 @@ makeCacheMatrix <- function(x = matrix()) {
 ## Write a short comment describing this function
 
 cacheSolve <- function(x, ...) {
-        ## Takes as input a matrix and check if its inverse
-        ## exists in cache before to compute it 
+  ## Takes as input a matrix and check if its inverse
+  ## exists in cache before to compute it 
   
-        ## Return a matrix that is the inverse of 'x'
-        inv <- x$getinv()
-        if (!isnull(inv)){
-          message("getting cached data")
-          return(inv)
-        }
-        data <- x$get()
-        m <- solve(data, ...)
-        x$setinv(inv)
-        inv
+  ## Return a matrix that is the inverse of 'x'
+  inv <- x$getinv()
+  if (!isnull(inv)){
+    message("getting cached data")
+    return(inv)
+  }
+  data <- x$get()
+  m <- solve(data, ...)
+  x$setinv(inv)
+  inv
 }
